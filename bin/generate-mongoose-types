@@ -1,2 +1,2 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env ts-node-script
 require('../src/generate-mongoose-types.ts')
