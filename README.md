@@ -77,7 +77,9 @@ User.virtual('fullNameTyped', { type: [String] }).get(function (this: any) {
     return this.name + this.lastname
 })
 
-;(User.method as any)('writeBook', () => {console.log('writing book')}, {s: true})
+User.method('writeBook', () => {
+    console.log('writing book')
+})
 
 User.static('findUserByBook', function (this: any, book: any) {
     return this.find({ book })
