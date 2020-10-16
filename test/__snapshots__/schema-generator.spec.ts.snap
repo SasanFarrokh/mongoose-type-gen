@@ -40,5 +40,6 @@ export interface UserModel extends Model<UserDocument> {
     findUserByBook: Function;
 }
 
-"
+
+export type UserSchema = Schema"
 `;

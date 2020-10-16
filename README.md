@@ -13,5 +13,10 @@ A Cli tool for generating typescript definitions for mongoose schemas
 - [x] Required fields
 - [ ] Custom data types
 - [ ] Typings for method arguments and return types
+- [ ] Refs
 
-### 
+### Usage
+
+```shell script
+$: 
+```

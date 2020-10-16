@@ -116,6 +116,7 @@ export class SchemaParser {
         const exports = [
             `export type ${this.name}Document = ${this.name} & Document`,
             modelInterface.toString(),
+            `export type ${this.name}Schema = Schema`
         ]
         return this.imports.join(EOL) + rootInterfaceGenerator.toString() + exports.join(EOL);
     }
