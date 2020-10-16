@@ -17,6 +17,17 @@ A Cli tool for generating typescript definitions for mongoose schemas
 
 ### Usage
 
+
 ```shell script
-$: 
+# Locally in your project.
+npm install -D mongoose-type-gen
+
+# Or globally with TypeScript.
+npm install -g mongoose-type-gen
+```
+
+And generate `.d.ts` files with the cli command:
+
+```shell script
+$: mongoose-type-gen ./src/models/*.ts
 ```

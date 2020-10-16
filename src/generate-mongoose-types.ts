@@ -8,26 +8,21 @@ program.on('--help', () => {
 });
 
 program
-    .command('generate [schemaPaths...]')
-    .action(async (schemaPaths: string[], cmd: any) => {
-        const {outputDir} = cmd;
-
-        // if (!outputDir) {
-        //     console.error('An output directory is required. Use -o or --output-dir');
-        //     return process.exit(1);
-        // }
-
+    .action(async (cmd: any) => {
+        let schemaPaths: string[] = cmd.args.slice()
         if (!schemaPaths || !schemaPaths.length) {
             console.error(
                 'No schema files could be found. Please check the required usage by running `ms2tsi -h`',
             );
             return process.exit(1);
         }
-
         const currentDir = process.env.PWD as string;
+        schemaPaths = schemaPaths
+            .filter((p: string) => !p.match(/\.d\.ts$/))
+            .map((p: string) => path.resolve(currentDir, p))
 
         const promises = schemaPaths.map((schemaPath: string) => {
-            const schemaFile = require(path.resolve(currentDir, schemaPath));
+            const schemaFile = require(schemaPath);
             for (const key in schemaFile) {
                 console.log(`  Generating: ` + schemaPath)
                 if (schemaFile[key] instanceof Schema) {

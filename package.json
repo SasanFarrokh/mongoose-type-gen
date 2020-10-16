@@ -7,9 +7,9 @@
   },
   "repository": {
     "type": "github",
-    "url": ""
+    "url": "https://github.com/sasanfarrokh/mongoose-type-gen"
   },
-  "bin": "bin/generate-mongoose-types",
+  "bin": "bin/mongoose-type-gen",
   "description": "Type definition generator for mongoose",
   "main": "src/index.js",
   "license": "MIT",
